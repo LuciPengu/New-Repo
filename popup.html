@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actions Menu</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    
+    .button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px 15px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: left;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #0052a3;
+    }
+
+    .shortcut-label {
+      position: absolute;
+      right: 15px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+    }
+
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Actions Menu</h2>
+  <button class="button" id="action1">
+    Action 1
+    <span class="shortcut-label">Ctrl+1</span>
+  </button>
+  <button class="button" id="action2">
+    Action 2
+    <span class="shortcut-label">Ctrl+2</span>
+  </button>
+  <button class="button" id="action3">
+    Action 3
+    <span class="shortcut-label">Ctrl+3</span>
+  </button>
+  <script src="popup.js"></script>
+</body>
+</html>
