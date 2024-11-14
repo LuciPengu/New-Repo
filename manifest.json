@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "JakoShakoPaco",
+  "name": "Chess.com Smart Analysis Tool",
   "version": "1.0",
-  "description": "wsg nigga",
+  "description": "Chess analysis tool",
   "permissions": ["activeTab"],
   "action": {
     "default_title": "Get FEN"
