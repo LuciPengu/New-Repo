@@ -2093,3 +2093,38 @@ document.addEventListener('keydown', (event) => {
 document.body.appendChild(resultParagraph);
 document.body.appendChild(resultExtraInfo);
 document.body.appendChild(smartGameEvaluation);
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.action) {
+      switch(request.action) {
+        case 'analyze':
+          resultParagraph.innerHTML = "Loading...";
+          resultExtraInfo.innerHTML = "Loading...";
+          analyzeMoveList();
+          break;
+        case 'toggleResult':
+          const isResultVisible = resultParagraph.style.display !== 'none';
+          resultParagraph.style.display = isResultVisible ? 'none' : 'block';
+          break;
+        case 'toggleExtra':
+          const isExtraVisible = resultExtraInfo.style.display !== 'none';
+          resultExtraInfo.style.display = isExtraVisible ? 'none' : 'block';
+          break;
+        case 'toggleEval':
+          const isEvalVisible = smartGameEvaluation.style.display !== 'none';
+          smartGameEvaluation.style.display = isEvalVisible ? 'none' : 'block';
+          break;
+        case 'getFen':
+          const mlc = document.querySelector('.game-tab-scrollable');
+          if (!mlc) {
+            throw new Error('Move list not found');
+          }
+          smartGameEvaluation.innerHTML = "Loading...";
+          const moves = parseMoveList(mlc.innerHTML);
+          getFENFromMoves(moves, true);
+          break;
+      }
+    }
+  }
+);

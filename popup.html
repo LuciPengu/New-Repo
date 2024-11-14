@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Actions Menu</title>
+  <title>Chess Analysis Controls</title>
   <style>
     body {
       width: 300px;
-      padding: 15px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #1f1f1f;
+      color: #fff;
+      margin: 0;
     }
     
     .button {
       display: block;
-      width: 100%;
+      width: calc(100% - 10px);
       margin: 8px 0;
-      padding: 10px 15px;
-      background: #0066cc;
-      color: white;
+      padding: 8px 12px;
+      background-color: #2f2f2f;
+      color: red;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
+      font-family: Arial, sans-serif;
+      font-size: 13px !important;
       text-align: left;
       position: relative;
-      transition: background 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.2s;
     }
 
     .button:hover {
-      background: #0052a3;
+      background-color: #3f3f3f;
     }
 
     .shortcut-label {
       position: absolute;
-      right: 15px;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 12px;
+      right: 12px;
+      color: rgba(255, 0, 0, 0.8);
+      font-size: 13px;
     }
 
     h2 {
-      margin: 0 0 15px 0;
-      font-size: 16px;
-      color: #333;
+      margin: 5px 0 15px 0;
+      font-size: 14px;
+      color: red;
+      font-family: Arial, sans-serif;
+      padding: 0 5px;
     }
   </style>
 </head>
 <body>
-  <h2>Actions Menu</h2>
-  <button class="button" id="action1">
-    Action 1
-    <span class="shortcut-label">Ctrl+1</span>
+  <h2>Chess.com Analysis Controls</h2>
+  <button class="button" id="analyze">
+    Analyze Moves
+    <span class="shortcut-label">S</span>
   </button>
-  <button class="button" id="action2">
-    Action 2
-    <span class="shortcut-label">Ctrl+2</span>
+  <button class="button" id="toggleResult">
+    Toggle Result
+    <span class="shortcut-label">A</span>
   </button>
-  <button class="button" id="action3">
-    Action 3
-    <span class="shortcut-label">Ctrl+3</span>
+  <button class="button" id="toggleExtra">
+    Toggle Extra Info
+    <span class="shortcut-label">Q</span>
+  </button>
+  <button class="button" id="toggleEval">
+    Toggle Evaluation
+    <span class="shortcut-label">W</span>
+  </button>
+  <button class="button" id="getFen">
+    Get FEN
+    <span class="shortcut-label">E</span>
   </button>
   <script src="popup.js"></script>
 </body>
